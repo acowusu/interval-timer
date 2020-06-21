@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img width="25%" src="./assets/logo.png">
     -->
-    <!-- <icon /> -->
+    <icon style="height:100px"/>
     <settings/>
     <timer/>
     <el-button icon="el-icon-s-tools" v-on:click="showDialog()" circle></el-button>
