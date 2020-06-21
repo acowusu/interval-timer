@@ -83,7 +83,7 @@ export default {
         return this.showMenu;
       },
       // setter
-      set: function(newValue) {
+      set: function() {
         this.$store.dispatch("showMenu");
       }
     }
