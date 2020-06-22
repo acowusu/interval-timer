@@ -39,6 +39,7 @@ const state = {
 
 const mutations = {
   NEXT(state) {
+    /* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
     try {
       state.tasks.push(state.tasks.shift());
     } catch (e) {}
