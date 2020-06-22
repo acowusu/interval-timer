@@ -36,8 +36,8 @@
                 v-model="mins"
                 active-color="#13ce66"
                 inactive-color="#ff4949"
-                active-text="Seconds"
-                inactive-text="Minuites"
+                active-text="Minuites"
+                inactive-text="Seconds"
               ></el-switch>
             </el-form-item>
             <el-button @click="addItem()" type="success" icon="el-icon-plus" circle></el-button>
