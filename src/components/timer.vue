@@ -23,9 +23,11 @@ export default {
         var remainder = this.getSeconds % 60;
 
         if (quotient === 0) {
-          return `${remainder}`;
+          return `${remainder.toString().padStart(2, "0")}`;
         }
-        return `${quotient}:${remainder}`;
+        return `${quotient
+          .toString()
+          .padStart(2, "0")}:${remainder.toString().padStart(2, "0")}`;
       } catch {
         return 0;
       }
@@ -47,11 +49,11 @@ export default {
 
 <style scoped>
 h2 {
-  font-size: 20em;
+  font-size: min(25vw, calc(30vh));
   margin: 20px;
 }
 code {
-  font-size: 5em;
+  font-size: 7vw;
 }
 button {
   background: #ffffff;
