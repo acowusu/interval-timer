@@ -5,6 +5,13 @@
     <icon style="height:100px"/>
     <settings/>
     <timer/>
+    <el-slider
+      v-model="$store.state.seconds"
+      :show-tooltip="false"
+      :min="0"
+      :max="$store.getters.getTask.seconds"
+    ></el-slider>
+
     <el-button icon="el-icon-s-tools" v-on:click="showDialog()" circle></el-button>
   </div>
 </template>
@@ -31,6 +38,15 @@ export default {
 </script>
 
 <style>
+.el-slider__button {
+  background: rgba(255, 255, 255, 0.7);
+}
+.el-slider__bar {
+  background: rgba(0, 0, 0, 0);
+}
+.el-slider__runway {
+  background: rgba(255, 255, 255, 0.233);
+}
 #app {
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   font-family: "Avenir", Helvetica, Arial, sans-serif;

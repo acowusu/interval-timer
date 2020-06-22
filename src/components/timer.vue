@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2>{{getSeconds}}</h2>
+    <h2>{{time}}</h2>
     <code>{{getTask.name}}</code>
     <div></div>
   </div>
@@ -16,8 +16,24 @@ export default {
     this.$store.dispatch("reset");
   },
   computed: {
-    ...mapGetters(["getSeconds", "getTask"])
+    ...mapGetters(["getSeconds", "getTask"]),
+    time() {
+      try {
+        var quotient = Math.floor(this.getSeconds / 60);
+        var remainder = this.getSeconds % 60;
 
+        if (quotient === 0) {
+          return `${remainder}`;
+        }
+        return `${quotient}:${remainder}`;
+      } catch {
+        return 0;
+      }
+    }
+
+    //       .var quotient = Math.floor(y/x);
+    // var remainder = y % x;
+    //     }
     // getSeconds() {
     //   return this.$store.getters.getSeconds;
     // },

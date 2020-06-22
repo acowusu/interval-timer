@@ -38,7 +38,9 @@ const state = {
 
 const mutations = {
   NEXT(state) {
-    state.tasks.push(state.tasks.shift());
+    try {
+      state.tasks.push(state.tasks.shift());
+    } catch (e) {}
   },
   SET(state, payload) {
     state.clock = payload;
@@ -73,10 +75,11 @@ const actions = {
   reset(context) {
     let clock = setInterval(function() {
       context.commit("TICK");
-
-      if (context.state.seconds >= context.getters.getTask.seconds) {
-        context.commit("NEXT");
-        context.commit("RESET");
+      if (context.getters.getTask) {
+        if (context.state.seconds >= context.getters.getTask.seconds) {
+          context.commit("NEXT");
+          context.commit("RESET");
+        }
       }
     }, 1000);
     context.commit("RESET", clock);
