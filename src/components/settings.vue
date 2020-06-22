@@ -92,7 +92,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style >
+.el-dialog {
+  max-width: 500px;
+  width: 90%;
+}
 .el-timeline-item {
   display: block;
 }
