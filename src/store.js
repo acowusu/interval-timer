@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import VuexPersistence from "vuex-persist";
 
 Vue.use(Vuex);
 
@@ -104,9 +105,17 @@ const getters = {
   }
 };
 
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage,
+  reducer: state => ({ tasks: state.tasks }),
+  filter: mutation =>
+    mutation.type === "ADDTASK" || mutation.type === "REMOVETASK"
+});
+
 export default new Vuex.Store({
   state,
   mutations,
   actions,
-  getters
+  getters,
+  plugins: [vuexLocal.plugin]
 });
