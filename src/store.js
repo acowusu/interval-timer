@@ -10,14 +10,14 @@ const state = {
   showMenu: false,
   tasks: [
     {
-      name: "work",
-      seconds: 30,
+      name: "Setup",
+      seconds: 120,
       up: false
     },
     {
-      name: "rest",
-      seconds: 5,
-      up: true
+      name: "Present",
+      seconds: 180,
+      up: false
     }
     // {
     //   name: "foo",
